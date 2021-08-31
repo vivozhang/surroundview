@@ -1,0 +1,96 @@
+<opencv_storage>
+<A1>-6375 -137 -125</A1>
+<A2>-7620 807 17714</A2>
+<A3>-782 -7324 -30154</A3>
+<A4>7537 7512 12200</A4>
+<A5>-3424 5541 15585</A5>
+<A6>3967 -1254 16883</A6>
+<A7>-3354 -5574 -15911</A7>
+<A8>-4096 7153 11657</A8>
+<B1>15866 15322 32317 20202 7181 4678 -3076 478</B1>
+<B2>15814 15625 31318 21964 7181 4678 -3076 478</B2>
+<B3>15999 15679 31902 20712 7181 4678 -3076 478</B3>
+<B4>15982 15925 30278 19766 7181 4678 -3076 478</B4>
+    <B5>3</B5>
+    <B6>3</B6>
+    <B7>3</B7>
+    <B8>3</B8>
+    <C1>500 700 500 700</C1>
+    <C2>132 468 73</C2>
+    <carType>0</carType>
+    <carColor>128 128 128</carColor>
+    <coeffSelect>2</coeffSelect>
+    <imgRect>120 300 1040 360</imgRect>
+    <leftPoint>180 80</leftPoint>
+    <rightPoint>380 80</rightPoint>
+    <warningDistance>20</warningDistance>
+    <allView>0 90 360 630</allView>
+    <singleView>360 90 920 630</singleView>
+    <timeStampView>560 640 400 40</timeStampView>
+    <frontResizer>0 0 1280 720</frontResizer>
+    <rearResizer>0 0 1280 720</rearResizer>
+    <leftResizer>0 0 1280 720</leftResizer>
+    <rightResizer>0 0 1280 720</rightResizer>
+    <frontTrajResizer>100 200 720 300</frontTrajResizer>
+    <rearTrajResizer>100 200 720 300</rearTrajResizer>
+    <singleViewtrajectoryFlag>3</singleViewtrajectoryFlag>
+    <birdViewTrajectoryFlag>1</birdViewTrajectoryFlag>
+    <stereoscopicViewTrajectoryFlag>1</stereoscopicViewTrajectoryFlag>
+    <ruleLineFlag>1</ruleLineFlag>
+    <singleViewRadarWallFlag>1</singleViewRadarWallFlag>
+    <birdViewRadarWallFlag>1</birdViewRadarWallFlag>
+    <stereoscopicViewRadarWallFlag>1</stereoscopicViewRadarWallFlag>
+    <screenAlwaysOn>0</screenAlwaysOn>
+    <autoOffTime>5</autoOffTime>
+    <speedCtl>40</speedCtl>
+    <scrInitAccOn>1</scrInitAccOn>
+    <veerHoldTime>5</veerHoldTime>
+    <dualFlashSwitch>1</dualFlashSwitch>
+    <carDoor>1</carDoor>
+    <calibType>1</calibType>
+    <dvrStoredir>0</dvrStoredir>
+    <dvrBitRate>2</dvrBitRate>
+    <dvrCycltime>1</dvrCycltime>
+    <dvrMonitorOn>1</dvrMonitorOn>
+    <dvrMonitorTime>5</dvrMonitorTime>
+    <version>TY-V1</version>
+    <uartProto>2</uartProto>
+    <uart2Updown>0</uart2Updown>
+    <voNorm>2</voNorm>
+    <viNorm>0</viNorm>
+    <hardwareVer>0</hardwareVer>
+    <vgaResolution>0</vgaResolution>
+    <selTouchUI>0</selTouchUI>
+    <voReso.lcd_if>0</voReso.lcd_if>
+    <voReso.lcd_x>800</voReso.lcd_x>
+    <voReso.lcd_y>480</voReso.lcd_y>
+    <voReso.lcd_width>333</voReso.lcd_width>
+    <voReso.lcd_height>12</voReso.lcd_height>
+    <voReso.lcd_dclk_freq>40</voReso.lcd_dclk_freq>
+    <voReso.lcd_pwm_used>0</voReso.lcd_pwm_used>
+    <voReso.lcd_pwm_ch>0</voReso.lcd_pwm_ch>
+    <voReso.lcd_pwm_freq>25920000</voReso.lcd_pwm_freq>
+    <voReso.lcd_pwm_pol>0</voReso.lcd_pwm_pol>
+    <voReso.lcd_hbp>98</voReso.lcd_hbp>
+    <voReso.lcd_ht>1256</voReso.lcd_ht>
+    <voReso.lcd_hspw>25</voReso.lcd_hspw>
+    <voReso.lcd_vbp>39</voReso.lcd_vbp>
+    <voReso.lcd_vt>533</voReso.lcd_vt>
+    <voReso.lcd_vspw>2</voReso.lcd_vspw>
+    <voReso.lcd_lvds_if>0</voReso.lcd_lvds_if>
+    <voReso.lcd_lvds_colordepth>0</voReso.lcd_lvds_colordepth>
+    <voReso.lcd_lvds_mode>0</voReso.lcd_lvds_mode>
+    <voReso.lcd_frm>1</voReso.lcd_frm>
+    <voReso.lcd_hv_clk_phase>0</voReso.lcd_hv_clk_phase>
+    <voReso.lcd_hv_sync_polarity>0</voReso.lcd_hv_sync_polarity>
+    <voReso.lcd_gamma_en>0</voReso.lcd_gamma_en>
+    <voReso.lcd_bright_curve_en>0</voReso.lcd_bright_curve_en>
+    <voReso.lcd_cmap_en>0</voReso.lcd_cmap_en>
+    <coeffs0>193.000000 191.000000 -0.029830 0.014130 -0.018760 0.009060</coeffs0>
+    <coeffs1>147.000000 147.000000 0.048300 -0.016920 -0.012890 0.004770</coeffs1>
+    <coeffs2>146.000000 145.000000 0.023340 -0.013070 0.008670 -0.001890</coeffs2>
+    <coeffs3>192.000000 191.000000 -0.010120 -0.037540 0.035260 -0.013060</coeffs3>
+    <coeffs4>192.000000 191.000000 -0.010120 -0.037540 0.035260 -0.013060</coeffs4>
+    <coeffs5>192.000000 191.000000 -0.010120 -0.037540 0.035260 -0.013060</coeffs5>
+    <coeffss>192.000000 191.000000 -0.010120 -0.037540 0.035260 -0.013060</coeffss>
+</opencv_storage>

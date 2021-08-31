@@ -1,0 +1,10 @@
+turn_min_angle_thresholds: 8
+turn_signal_nums_ack_thresholds: 20
+steer_angle_ratio: 23
+overall_view_speed_thresholds: 15
+turn_control_type: 0
+qos_profile_depth: 10;
+pending_queue_size: 50;
+left_ratio: 4;
+right_ratio: 3;
+camera_360_message_topic: "/apollo/drivers/camera360";

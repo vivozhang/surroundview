@@ -1,5 +1,1 @@
-# add_subdirectory(camera_miivii)
-add_subdirectory(camera_tzter)
-add_subdirectory(control)
-add_subdirectory(opencv)
 add_subdirectory(openglwindow)

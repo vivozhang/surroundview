@@ -1,9 +1,12 @@
 
-#include "modules/surroundview/opencv/include/cv.h"
-#include "modules/surroundview/opencv/include/cxcore.h"
+#include <EGL/egl.h>
+#include <GLES3/gl3.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
 
-//#include "/home/lk/project/qtTest/opencv/include/cv.h"
-//#include "/home/lk/project/qtTest/opencv/include/cxcore.h"
+#include <string>
+#include <vector>
 
 #include "opengl_common.h"
 
@@ -61,48 +64,45 @@ typedef struct PARA_FIELD
     int carWorldY2;
 } PARA_FIELD;
 
-typedef struct _textureCoords
-{
-    std::vector<CvPoint2D32f> glTexCoord_F;
-    std::vector<CvPoint2D32f> glTexCoord_B;
-    std::vector<CvPoint2D32f> glTexCoord_L;
-    std::vector<CvPoint2D32f> glTexCoord_R;
-    std::vector<CvPoint2D32f> glTexCoord_FL_F;
-    std::vector<CvPoint2D32f> glTexCoord_FL_L;
-    std::vector<CvPoint2D32f> glTexCoord_FR_F;
-    std::vector<CvPoint2D32f> glTexCoord_FR_R;
-    std::vector<CvPoint2D32f> glTexCoord_BL_B;
-    std::vector<CvPoint2D32f> glTexCoord_BL_L;
-    std::vector<CvPoint2D32f> glTexCoord_BR_B;
-    std::vector<CvPoint2D32f> glTexCoord_BR_R;
+typedef struct _textureCoords {
+  std::vector<vec2> glTexCoord_F;
+  std::vector<vec2> glTexCoord_B;
+  std::vector<vec2> glTexCoord_L;
+  std::vector<vec2> glTexCoord_R;
+  std::vector<vec2> glTexCoord_FL_F;
+  std::vector<vec2> glTexCoord_FL_L;
+  std::vector<vec2> glTexCoord_FR_F;
+  std::vector<vec2> glTexCoord_FR_R;
+  std::vector<vec2> glTexCoord_BL_B;
+  std::vector<vec2> glTexCoord_BL_L;
+  std::vector<vec2> glTexCoord_BR_B;
+  std::vector<vec2> glTexCoord_BR_R;
 } TexCoords;
 
-typedef struct _objectPoints
-{
-    std::vector<CvPoint3D32f> glObjPoints_F;
-    std::vector<CvPoint3D32f> glObjPoints_B;
-    std::vector<CvPoint3D32f> glObjPoints_L;
-    std::vector<CvPoint3D32f> glObjPoints_R;
-    std::vector<CvPoint3D32f> glObjPoints_FL_F;
-    std::vector<CvPoint3D32f> glObjPoints_FL_L;
-    std::vector<CvPoint3D32f> glObjPoints_FR_F;
-    std::vector<CvPoint3D32f> glObjPoints_FR_R;
-    std::vector<CvPoint3D32f> glObjPoints_BL_B;
-    std::vector<CvPoint3D32f> glObjPoints_BL_L;
-    std::vector<CvPoint3D32f> glObjPoints_BR_B;
-    std::vector<CvPoint3D32f> glObjPoints_BR_R;
+typedef struct _objectPoints {
+  std::vector<vec3> glObjPoints_F;
+  std::vector<vec3> glObjPoints_B;
+  std::vector<vec3> glObjPoints_L;
+  std::vector<vec3> glObjPoints_R;
+  std::vector<vec3> glObjPoints_FL_F;
+  std::vector<vec3> glObjPoints_FL_L;
+  std::vector<vec3> glObjPoints_FR_F;
+  std::vector<vec3> glObjPoints_FR_R;
+  std::vector<vec3> glObjPoints_BL_B;
+  std::vector<vec3> glObjPoints_BL_L;
+  std::vector<vec3> glObjPoints_BR_B;
+  std::vector<vec3> glObjPoints_BR_R;
 } ObjPoints;
 
-typedef struct _vertexCoords
-{
-    std::vector<CvPoint3D32f> glVertex_F;
-    std::vector<CvPoint3D32f> glVertex_B;
-    std::vector<CvPoint3D32f> glVertex_L;
-    std::vector<CvPoint3D32f> glVertex_R;
-    std::vector<CvPoint3D32f> glVertex_FL;
-    std::vector<CvPoint3D32f> glVertex_FR;
-    std::vector<CvPoint3D32f> glVertex_BL;
-    std::vector<CvPoint3D32f> glVertex_BR;
+typedef struct _vertexCoords {
+  std::vector<vec3> glVertex_F;
+  std::vector<vec3> glVertex_B;
+  std::vector<vec3> glVertex_L;
+  std::vector<vec3> glVertex_R;
+  std::vector<vec3> glVertex_FL;
+  std::vector<vec3> glVertex_FR;
+  std::vector<vec3> glVertex_BL;
+  std::vector<vec3> glVertex_BR;
 } VertexCoords;
 
 typedef struct _blendAlpha
@@ -121,16 +121,15 @@ typedef struct _lumiaAdjust
     std::vector<float> glLumiaAdjust_R;
 } LumiaAdjust;
 
-typedef struct _objectPointsStatistics
-{
-    std::vector<CvPoint3D32f> glObjPoints_FL_F;
-    std::vector<CvPoint3D32f> glObjPoints_FL_L;
-    std::vector<CvPoint3D32f> glObjPoints_FR_F;
-    std::vector<CvPoint3D32f> glObjPoints_FR_R;
-    std::vector<CvPoint3D32f> glObjPoints_BL_B;
-    std::vector<CvPoint3D32f> glObjPoints_BL_L;
-    std::vector<CvPoint3D32f> glObjPoints_BR_B;
-    std::vector<CvPoint3D32f> glObjPoints_BR_R;
+typedef struct _objectPointsStatistics {
+  std::vector<vec3> glObjPoints_FL_F;
+  std::vector<vec3> glObjPoints_FL_L;
+  std::vector<vec3> glObjPoints_FR_F;
+  std::vector<vec3> glObjPoints_FR_R;
+  std::vector<vec3> glObjPoints_BL_B;
+  std::vector<vec3> glObjPoints_BL_L;
+  std::vector<vec3> glObjPoints_BR_B;
+  std::vector<vec3> glObjPoints_BR_R;
 } ObjPointsStatistics;
 
 typedef struct _textureCoordsStatistics
@@ -159,16 +158,15 @@ typedef struct _VBO3DMosaicImage
     GLuint CarVerTexCoord[2];
 } VBO3DMosaicImage;
 
-typedef struct _cam_params
-{
-    CvMat *camera;
-    CvMat *dist_coeffs;
-    CvMat *r_vec;
-    CvMat *t_vec;
-    int mrInt[3];
-    int mtInt[3];
-    int mimdInt[8];
-} SimplifyCamParams;
+typedef struct _cam_params {
+  int mrInt[3];
+  int mtInt[3];
+  int mimdInt[8];
+  float mr[3];
+  float mt[3];
+  float mi[9];
+  float md[4];
+} camParams;
 
 typedef struct undistortParams
 {
@@ -185,8 +183,12 @@ extern void initTextureCoords(int flag);
 extern void initVBO();
 extern void initCamParaData();
 extern void getCamPixelPosition(int flag);
-extern void findRearCurve(float wheelAngle, undistortParams params, float *camera, float *distortTable, float *rVec, float *tVec, double *invR, int width, int height);
+extern void findRearCurve(float wheelAngle, undistortParams params,
+                          float *camera, float *distortTable, float *rVec,
+                          float *tVec, double *invR, int width, int height);
 extern void getInvertMatrix(double *src, double *dst);
+
+extern void rotateVectorToRotateMatrix(float *vector, float *matrix);
 
 extern PARA_FIELD para_field[2];
 
@@ -200,6 +202,11 @@ extern GLuint cameraVerTexCoord[2];
 
 extern TexCoordsStatistics texCoordsStatistics2D[2];
 
-extern SimplifyCamParams backWardCamParams[2];
+extern camParams frontCamParams[2]; 
+extern camParams rearCamParams[2];
+extern camParams leftCamParams[2];
+extern camParams rightCamParams[2];
+extern camParams backWardCamParams[2];
 
-extern CvPoint3D32f verticesRearTrajLinePoint[11][LENGTH * 2];
+
+extern vec3 verticesRearTrajLinePoint[11][LENGTH * 2];

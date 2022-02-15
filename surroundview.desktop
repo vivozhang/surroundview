@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=KDevelop1
-Exec=/home/sany/workspace/syautodrive/modules/surroundview/surroundview.sh
-NoDisplay=true
-StartupNotify=false
-Categories=System;Utility;Archiving;
